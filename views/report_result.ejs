@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PES HOSTEL</title>
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 20px auto;
+      padding: 20px;
+      width: 80%;
+    }
+    h1 {
+      color: #333;
+    }
+    .error {
+      color: red;
+    }
+    .results {
+      color: #007BFF;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>RESULTS</h1>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <% if (results) { %>
+      <h2 class="results">Procedure Results:</h2>
+      <table>
+        <tr>
+          <th>reg_no</th>
+          <th>stud_name</th>
+          <th>absent_date</th>
+        </tr>
+        <% results.forEach(result => { %>
+          <tr>
+            <td><%= result.reg_no %></td>
+            <td><%= result.stud_name %></td>
+            <td><%= result.absent_date %></td>
+          </tr>
+        <% }); %>
+      </table>
+    <% } %>
+  </div>
+</body>
+</html>

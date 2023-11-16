@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        main {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #007bff;
+        }
+        
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        select {
+            color: #007bff;
+        }
+
+        input[readonly] {
+            background-color: #f2f2f2;
+        }
+        
+        input[type="file"] {
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Add Complaint</title>
+</head>
+<body>
+    <main>
+        <form action="/add-complaint" method="POST">
+            <label for="complaint-date-input">Complaint Date:</label>
+            <input type="date" id="complaint-date-input" name="complaint_date" required>
+            
+            <label for="resolve-date-input">Resolve Date (Read-Only):</label>
+            <input type="date" id="resolve-date-input" name="resolve_date" readonly>
+            
+            <label for="complaint-type">Type:</label>
+            <select id="complaint-type" name="type" required>
+                <option value="electricity">Electricity</option>
+                <option value="carpenter">Carpenter</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="complaint-description">Description:</label>
+            <textarea id="complaint-description" rows="4" name="description" required></textarea>
+            
+            <label for="complaint-picture">Picture:</label>
+            <input type="file" id="complaint-picture" name="picture">
+            
+            <!-- <label for="student-reg-no">Student Reg No:</label> -->
+            <input type="hidden" id="student-reg-no" name="reg_no" value={{reg_no}}>
+            
+            <button type="submit" id="add-complaint-btn">Add Complaint</button>
+        </form>
+    </main>
+</body>
+</html>

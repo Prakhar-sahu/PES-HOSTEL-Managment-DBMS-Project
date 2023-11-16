@@ -1,0 +1,104 @@
+ <!-- Fixed navbar -->
+ <div class="navbar navbar-default navbar-fixed-top navbar-size-large navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-brand navbar-brand-logo">
+          <a class="svg" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="0 0 200 100">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#FF5733;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#FFC300;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#33FF57;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              
+              <text x="-60" y="60" font-family="Arial" font-size="40" fill="url(#gradient)">P</text>
+              <text x="0" y="60" font-family="Arial" font-size="40" fill="url(#gradient)">E</text>
+              <text x="60" y="60" font-family="Arial" font-size="40" fill="url(#gradient)">S</text>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="nav navbar-nav navbar-nav-margin-left">
+          <li class="dropdown active">
+            <a href="index.ejs#" class="dropdown-toggle" data-toggle="dropdown">General <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="active"><a href="/">Home page</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+              <!-- <li><a href="tutors.html">Tutors</a></li> -->
+              
+              <!-- <li><a href="/realTimeForum">Real time Forum</a></li> -->
+              <!-- <li><a href="/website-forum">Forum Home</a></li> -->
+              <!-- <li><a href="website-forum-category.html">Forum Category</a></li> -->
+              <!-- <li><a href="/website-forum-thread">Forum Thread</a></li> -->
+              <!-- <li><a href="website-blog.html">Blog Listing</a></li> -->
+              <!-- <li><a href="website-blog-post.html">Blog Post</a></li> -->
+              <li><a href="/website-contact">Contact</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">Guardian && Outing <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/add-student-localguardian">Add your guardian details</a></li>
+              
+              <li><a href="/outing-request">Request for Gate pass </a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown"> Queries <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/add-student-complaint">Raise Complaint</a></li>
+              <!-- <li><a href="website-directory-list.html">List Directory</a></li>
+              <li><a href="website-course.html">Single </a></li> -->
+            </ul>
+          </li>
+         
+          <!-- <li class="dropdown">
+            <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">Warden <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/add-student-warden">Dashboard</a></li>
+              <li><a href="website-instructor-courses.html">My Blocks</a></li>
+              <li><a href="/add-student-warden">Edit Student Table</a></li>
+              <li><a href="website-instructor-earnings.html">Earnings</a></li>
+              <li><a href="website-instructor-statement.html">Statement</a></li>
+              <li><a href="website-instructor-messages.html">Messages</a></li>
+              <li><a href="website-instructor-profile.html">Private Profile</a></li>
+            </ul>
+          </li> -->
+         
+        </ul>
+        <div class="navbar-right">
+          <ul class="nav navbar-nav navbar-nav-bordered navbar-nav-margin-right">
+            <!-- user -->
+
+            <li class="dropdown user">
+              <a href="index.html#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="images/people/110/guy-6.jpg" alt="" class="img-circle" /> <%= name %><span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <!-- <li><a href="website-student-dashboard.html"><i class="fa fa-bar-chart-o"></i> Dashboard</a></li> -->
+                <!-- <li><a href="website-student-courses.html"><i class="fa fa-mortar-board"></i> My Courses</a></li> -->
+                <li><a href="website-student-profile.html"><i class="fa fa-user"></i> Profile</a></li>
+                <li><a href="/login"><i class="fa fa-sign-out"></i> Logout</a></li>
+              </ul>
+            </li>
+            
+            <!-- // END user -->
+          </ul>
+          <!-- <a href="/login" class="navbar-btn btn btn-primary">Log In</a> -->
+        </div>
+      </div>
+      <!-- /.navbar-collapse -->
+
+    </div>
+  </div>

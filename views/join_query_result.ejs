@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PES HOSTEL</title>
+  <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Query Results</h1>
+  <% if (results.length > 0) { %>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Room No</th>
+        <th>Block ID</th>
+        <th>Complaint Date</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+      <% results.forEach(result => { %>
+        <tr>
+          <td><%= result.stud_name %></td>
+          <td><%= result.room_no %></td>
+          <td><%= result.block_id %></td>
+          <td><%= result.complaint_date %></td>
+          <td><%= result.type %></td>
+          <td><%= result.description %></td>
+        </tr>
+      <% }); %>
+    </table>
+  <% } else { %>
+    <p>No results found.</p>
+  <% } %>
+</body>
+
+</html>

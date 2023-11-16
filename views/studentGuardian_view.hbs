@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PES HOSTEL</title>
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <h2>Local Guardian List</h2>
+        <button class="btn btn-success" data-toggle="modal" data-target="#myModalAdd">Add New</button>
+        <table class="table table-striped" id="mytable">
+            <thead>
+                <tr>
+                    <th>Guardian Name</th>
+                    <th>Reg No</th>
+                    <th>Gender</th>
+                    <th>Relation</th>
+                    <th>Email id</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each results}}
+                <tr>
+                    <td>{{ guardian_name }}</td>
+                    <td>{{ reg_no }}</td>
+                    <td>{{ gender }}</td>
+                    <td>{{ relation }}</td>
+                    <td>{{ email_id }}</td>
+                    <td>{{ address }}</td>
+                    <td>{{ ph_no }}</td>
+                    <td>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-info edit" data-guardian_name="{{ guardian_name }}"
+                            data-reg_no="{{ reg_no }}" data-gender="{{ gender }}" data-relation="{{ relation }}" data-email_id="{{ email_id }}" data-address="{{ address }}" data-ph_no="{{ ph_no }}">Edit</a>
+                        <a href="javascript:void(0);" class="btn btn-sm btn-danger delete"
+                            data-reg_no="{{ reg_no }}">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add New Local Guardian Modal-->
+    <form action="/saveLocalGuardian" method="post">
+        <div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add New Local Guardian</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" name="reg_no" value="{{ reg_no }}">
+                        <div class="form-group">
+                            <input type="text" name="guardian_name" class="form-control" placeholder="Guardian Name" required>
+                        </div>
+                        {{!-- <div class="form-group">
+                            <input type="text" name="reg_no" class="form-control" placeholder="Register No" required>
+                        </div> --}}
+                        <div class="form-group">
+                            <p>Gender</p>
+                            <input type="radio" name="gender" value="M" >
+                            <label for="M">Male</label><br>
+                            <input type="radio" name="gender" value="F" >
+                            <label for="F">Female</label><br>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="relation" class="form-control" placeholder="Relation with the local guardian" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email_id" class="form-control" placeholder="Email ID" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="address" class="form-control" placeholder="Address of the local guardian" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="ph_no" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Edit Local Guardian Modal-->
+    <!-- Edit Local Guardian Modal-->
+<form action="/updateLocalGuardian" method="post">
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Edit Local Guardian</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="reg_no" class="form-control reg_no" value="{{ reg_no }}" required>
+                    <div class="form-group">
+                        <input type="text" name="guardian_name" class="form-control" placeholder="Guardian Name" required>
+                    </div>
+                    <div class="form-group">
+                        <p>Gender</p>
+                        <input type="radio" name="gender" value="M">
+                        <label for="M">Male</label><br>
+                        <input type="radio" name="gender" value="F">
+                        <label for="F">Female</label><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="relation" class="form-control" placeholder="Relation with the local guardian" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email_id" class="form-control" placeholder="Email ID" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="address" class="form-control" placeholder="Address of the local guardian" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="ph_no" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+    <!-- Delete Local Guardian Modal-->
+    <form id="add-row-form" action="/deleteLocalGuardian" method="post">
+        <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="myModalLabel">Delete Local Guardian</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body"> 
+                        <strong>Are You Sure To Delete This Data?</strong>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="reg_no" class="form-control reg_no" required>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-success">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script src="/js/jquery-3.3.1.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            //showing data to modal for edit record
+            $('#mytable').on('click', '.edit', function () {
+                var guardian_name = $(this).data('guardian_name');
+                var reg_no = $(this).data('reg_no');
+                var gender = $(this).data('gender');
+                var relation = $(this).data('relation');
+                var email_id = $(this).data('email_id');
+                var address = $(this).data('address');
+                var ph_no = $(this).data('ph_no');
+                $('#EditModal').modal('show');
+                $('.guardian_name').val(guardian_name);
+                $('.reg_no').val(reg_no);
+                $('.gender').val(gender);
+                $('.relation').val(relation);
+                $('.email_id').val(email_id);
+                $('.address').val(address);
+                $('.ph_no').val(ph_no);
+            });
+            //showing modal for delete record
+            $('#mytable').on('click', '.delete', function () {
+                var reg_no = $(this).data('reg_no');
+                console.log(reg_no)
+                $('#DeleteModal').modal('show');
+                $('.reg_no').val(reg_no);
+            });
+
+        });
+    </script>
+</body>
+
+</html>
