@@ -1,10 +1,15 @@
+require('dotenv').config(); // Load environment variables from .env file
 const mysql = require('mysql2');
+
+// Create a connection pool with environment variables
 const dbConnection = mysql.createPool({
     connectionLimit: 10,
-    host     : 'mysql-13a1650e-jsahu2814-a152.j.aivencloud.com', // MYSQL HOST NAME
-    port: 16189,
-    user     : 'avnadmin',        // MYSQL USERNAME
-    password : 'AVNS_0iYIT3O5oR4P3_W9f_R',    // MYSQL PASSWORD
-    database : 'hostel'      // MYSQL DB NAME
+    host: process.env.MYSQL_HOST,
+    port: process.env.MYSQL_PORT,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE
 }).promise();
+
+// Export the connection pool
 module.exports = dbConnection;

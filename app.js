@@ -25,12 +25,12 @@ app.use(function (req, res, next) {
 });
 
 const db = mysql.createConnection({
-    connectionLimit: 10,
-    host     : 'mysql-13a1650e-jsahu2814-a152.j.aivencloud.com', // MYSQL HOST NAME
-    port: 16189,
-    user     : 'avnadmin',        // MYSQL USERNAME
-    password : 'AVNS_0iYIT3O5oR4P3_W9f_R',    // MYSQL PASSWORD
-    database : 'hostel'      // MYSQL DB NAME
+  connectionLimit: 10,
+  host: process.env.MYSQL_HOST,
+  port: process.env.MYSQL_PORT,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE
 });
 // APPLY COOKIE SESSION MIDDLEWARE 
 app.use(cookieSession({
