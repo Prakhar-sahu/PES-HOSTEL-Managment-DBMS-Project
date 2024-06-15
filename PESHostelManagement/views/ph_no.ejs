@@ -1,0 +1,98 @@
+<!-- inputForm.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PES HOSTEL</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .phNo {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Student Phone Numbers</h1>
+
+    <form action="/added-ph" method="post">
+        <label for="regNo">Registration Number:</label>
+        <input type="text" id="regNo" name="regNo" required>
+
+        <div id="phoneNumbers">
+            <label for="phNo">Phone Number:</label>
+            <input type="text" class="phNo" name="phNumbers[]" required>
+        </div>
+
+        <button type="button" onclick="addPhoneNumber()">Add Phone Number</button>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function addPhoneNumber() {
+            var phoneNumberInput = document.createElement("input");
+            phoneNumberInput.type = "text";
+            phoneNumberInput.className = "phNo";
+            phoneNumberInput.name = "phNumbers[]";
+
+            document.getElementById("phoneNumbers").appendChild(phoneNumberInput);
+        }
+    </script>
+</body>
+</html>

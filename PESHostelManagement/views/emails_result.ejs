@@ -1,0 +1,77 @@
+<!-- views/emails_result.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emails</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      color: #333;
+    }
+
+    h1 {
+      color: #007BFF;
+    }
+
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #dee2e6;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    td {
+      background-color: #f8d7da;
+      color: #1c7243;
+    }
+
+    p {
+      color: #155724;
+    }
+
+    /* Add additional styles as needed */
+
+  </style>
+</head>
+
+<body>
+  <h1>Query Results</h1>
+  <% if (results.length > 0) { %>
+    <table>
+      <tr>
+        <th>Student Name</th>
+        <th>Registration Number</th>
+        <th>Parent's Email</th>
+        <th>Guardian's Email</th>
+      </tr>
+      <% results.forEach(result => { %>
+        <tr>
+          <td><%= result.stud_name %></td>
+          <td><%= result.reg_no %></td>
+          <td><%= result.parent_email %></td>
+          <td><%= result.guardian_email %></td>
+        </tr>
+      <% }); %>
+    </table>
+  <% } else { %>
+    <p>No results found.</p>
+  <% } %>
+</body>
+
+</html>
