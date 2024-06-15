@@ -1,21 +1,21 @@
 {
   "name": "hostelmanagementsystem",
   "version": "1.0.0",
-  "description": "Hostel Management System  developed for Amrita School of Engineering",
+  "description": "Hostel Management System  developed by Prakhar Sahu",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1" ,
+    "start": "node app.js"
+    
+    
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Nuthi-Sriram/HostelManagementSystem.git"
+    "url": "git+https://github.com/Prakhar-sahu/PES-HOSTEL-Managment-DBMS-Project.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Nuthi-Sriram/HostelManagementSystem/issues"
-  },
-  "homepage": "https://github.com/Nuthi-Sriram/HostelManagementSystem#readme",
+  
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
