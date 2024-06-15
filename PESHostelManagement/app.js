@@ -1214,7 +1214,7 @@ app.get('/lg', (req, res) => {
 
 
 // set the app to listen on the port
-http.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server running on port: ${port}`);
 });
       
