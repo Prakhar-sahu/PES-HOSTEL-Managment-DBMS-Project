@@ -25,10 +25,12 @@ app.use(function (req, res, next) {
 });
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'prakharsahu',
-  database: 'hostel'
+    connectionLimit: 10,
+    host     : 'mysql-13a1650e-jsahu2814-a152.j.aivencloud.com', // MYSQL HOST NAME
+    port: 16189,
+    user     : 'avnadmin',        // MYSQL USERNAME
+    password : 'AVNS_0iYIT3O5oR4P3_W9f_R',    // MYSQL PASSWORD
+    database : 'hostel'      // MYSQL DB NAME
 });
 // APPLY COOKIE SESSION MIDDLEWARE 
 app.use(cookieSession({
@@ -80,7 +82,7 @@ app.get("/app-student-billing", (req, res) => {
   res.render("app-student-billing");
 });
 app.get('/add-student-warden', (req, res) => {
-  let sql = "SELECT * FROM Student";
+  let sql = "SELECT * FROM student";
   let query = db.query(sql, (err, results) => {
     if (err) throw err;
     res.render('student_view.hbs', {
