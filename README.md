@@ -24,7 +24,7 @@ To get started with the Hostel Management System, follow these steps:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/yourusername/hostel-management-system.git
+    git clone https://github.com/Prakhar-sahu/PES-HOSTEL-Managment-DBMS-Project.git
     ```
 2. **Navigate to the Project Directory**:
     ```bash
