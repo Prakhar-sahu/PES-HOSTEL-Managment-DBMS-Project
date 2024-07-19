@@ -8,6 +8,8 @@
 - **Room Allocation**: Efficiently manage room assignments and availability.
 - **Student Details**: Maintain and update student records and personal information.
 - **Attendance Management**: Track and manage student attendance.
+- **Permission Requests**: Allow students to request permissions and track their status.
+- **Status Tracking**: Monitor the status of permission requests.
 - **User-Friendly Interface**: Developed with Next.js to provide a responsive and intuitive experience.
 
 ## 🛠️ Skills Used
